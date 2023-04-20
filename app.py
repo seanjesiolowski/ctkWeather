@@ -6,7 +6,7 @@ class App(ctk.CTk):
     def __init__(self):
         super().__init__()
 
-        self.title("Current temperature (F) in Croghan, NY")
+        self.title(f"Current Temperature (F) in {w.city}")
         self.minsize(400, 300)
 
         self.btn1 = ctk.CTkButton(
@@ -19,7 +19,7 @@ class App(ctk.CTk):
     def button_callback(self):
         current_weather = w.Weather()
         self.txtbx1.delete("1.0", ctk.END)  # "line.column"
-        message = f"At {current_weather.current_time},\nthe temperature in Croghan, NY\nis {current_weather.get_temp_f()} degrees Fahrenheit."
+        message = f"At {current_weather.current_time},\nthe temperature in {current_weather.city}\nis {current_weather.get_temp_f()} degrees Fahrenheit."
         self.txtbx1.insert("insert", message, "n/a")
 
 
