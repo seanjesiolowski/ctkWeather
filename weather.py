@@ -15,7 +15,8 @@ class Weather:
         self.city = city
         self.current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-        api_key = 'd2482af69c8e2848b4fa90c99bfd9cab'
+        #  insert your own api key:
+        api_key = ''
         api_url = f'https://api.openweathermap.org/data/2.5/weather?q={self.city}&appid={api_key}'
         response_api = requests.get(api_url)
         print("API response status code:", response_api.status_code)
